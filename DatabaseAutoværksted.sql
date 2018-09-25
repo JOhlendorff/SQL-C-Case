@@ -6,7 +6,7 @@ go
 use Autoværksted
 go
 create table kunder (
-kundeid int primary key,
+kundeid int primary key identity (1,1),
 fornavn nvarchar(35),
 efternavn nvarchar(35),
 postnr int,
@@ -39,6 +39,6 @@ DatoforCheckUd varchar(50)
 
 
 
-
-select * from kunder
+insert into kunder values ('Morten', 'Pawgård', 2800)
+select * from bil
 truncate table kunder
