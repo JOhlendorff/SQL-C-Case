@@ -1,6 +1,7 @@
 use master
-go
-create database Autoværksted
+IF EXISTS(select * from sys.databases where name='Autoværksted')
+DROP DATABASE Autoværksted
+CREATE DATABASE Autoværksted
 go
 use Autoværksted
 go
@@ -25,7 +26,7 @@ olie nvarchar(5)
 )
 go
 create table værkstedsbesøg(
-id int foreign key references kunder(id),
+id int foreign key references kunder(kundeid),
 CheckIn nvarchar(25),
 CheckUd nvarchar(25),
 )
