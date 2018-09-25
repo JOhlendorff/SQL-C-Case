@@ -31,10 +31,10 @@ namespace SQL_Connection
 
                 foreach (DataRow kunde in table.Rows)
                 {
-                    Console.WriteLine(kunde["id"].ToString());
-                    Console.WriteLine(kunde["navn"].ToString());
-                    Console.WriteLine(kunde["adr"].ToString());
-                    Console.WriteLine(kunde["alder"].ToString());
+                    Console.WriteLine(kunde["kundeid"].ToString());
+                    Console.WriteLine(kunde["fornavn"].ToString());
+                    Console.WriteLine(kunde["efternavn"].ToString());
+                    Console.WriteLine(kunde["postnr"].ToString());
                     Console.WriteLine();
                 }
 

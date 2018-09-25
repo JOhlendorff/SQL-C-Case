@@ -11,11 +11,13 @@ namespace SQL_Connection
         static void Main(string[] args)
         {
             opretKunde();
+            SqlTest.Select("select * from kunder");
+            Console.ReadKey();
         }
 
         private static void opretKunde()
         {
-            string statement = "insert into kunder values ('" + "Anders And" + "','" + "Telegrafvej 9" + "'," + 90 + ")";
+            string statement = "insert into kunder values ('" + "Jesper" + "','" + "Fårekylling" + "'," + "2800" + ")";
 
             SqlTest.insert(statement);
         }
