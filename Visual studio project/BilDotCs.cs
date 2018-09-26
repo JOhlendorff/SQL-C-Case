@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace SQL_Connection
 {
-    class SqlTest
+    class BilDotCs
     {
         private static string ConnectionString = "Data Source = SKAB2-PC-03;Initial Catalog=Autoværksted; Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         public static void insert(string sql)
@@ -29,16 +29,27 @@ namespace SQL_Connection
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
                 adapter.Fill(table);
 
-                foreach (DataRow kunde in table.Rows)
+                foreach (DataRow bil in table.Rows)
                 {
-                    Console.WriteLine(kunde["id"].ToString());
-                    Console.WriteLine(kunde["fornavn"].ToString());
-                    Console.WriteLine(kunde["efternavn"].ToString());
-                    Console.WriteLine(kunde["postnr"].ToString());
-                    
+                    Console.WriteLine(bil["id"].ToString());
+                    Console.WriteLine(bil["mærke"].ToString());
+                    Console.WriteLine(bil["model"].ToString());
+                    Console.WriteLine(bil["årgang"].ToString());
+                    Console.WriteLine(bil["km"].ToString());
+                    Console.WriteLine(bil["brændstoftype"].ToString());
+                    Console.WriteLine(bil["vægt"].ToString());
                 }
 
                 // denførsterække = table.Rows[0] ["navn"].ToString();            
+            }
+        }
+        public static void update(string sql)
+        {
+            using (SqlConnection con = new SqlConnection(ConnectionString))
+            {
+                con.Open();
+                SqlCommand cmd = new SqlCommand(sql, con);
+                cmd.ExecuteNonQuery();
             }
         }
         public static void delete(string sql)
@@ -52,5 +63,5 @@ namespace SQL_Connection
 
         }
     }
+    }
 
-}
