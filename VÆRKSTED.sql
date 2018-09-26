@@ -15,7 +15,7 @@ postnr int,
 
 go
 create table bil(
-id int foreign key references kunder(kundeid),
+id int foreign key references kunder(id),
 regnr int primary key identity(1,1),
 mærke nvarchar(35),
 model nvarchar(35),
@@ -37,9 +37,9 @@ id int foreign key references bil(regnr),
 DatoforCheckIn varchar(50),
 DatoforCheckUd varchar(50)
 )
-
+insert into kunder values('Tis', 'nisselort', 2650)
 --insert into bil values ('BMW','Sport','2019','100','Nitro','420)
-insert into bil values (2, 'lort', 'mig', 2008, 200000, 'tis',100)
+insert into bil values (1,'lort', 'mig', 2008, 200000, 'tis',100)
 --insert into kunder values ('Morten', 'Pawgård', 2800)
-select * from bil
+select * from kunder
 --truncate table kunder
