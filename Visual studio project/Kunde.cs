@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace SQL_C_Værksted_Superclass_Test
 {
-    public class BilDotCs : Superclass
+    class Kunde : Superclass
     {
         public static void Select(string sql)
         {
@@ -18,18 +18,15 @@ namespace SQL_C_Værksted_Superclass_Test
                 con.Open();
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
                 adapter.Fill(table);
-                foreach (DataRow bil in table.Rows)
+
+                foreach (DataRow kunde in table.Rows)
                 {
-                    Console.WriteLine(bil["id"].ToString());
-                    Console.WriteLine(bil["mærke"].ToString());
-                    Console.WriteLine(bil["model"].ToString());
-                    Console.WriteLine(bil["årgang"].ToString());
-                    Console.WriteLine(bil["km"].ToString());
-                    Console.WriteLine(bil["brændstoftype"].ToString());
-                    Console.WriteLine(bil["vægt"].ToString());
+                    Console.WriteLine(kunde["id"].ToString());
+                    Console.WriteLine(kunde["fornavn"].ToString());
+                    Console.WriteLine(kunde["efternavn"].ToString());
+                    Console.WriteLine(kunde["postnr"].ToString());
 
                 }
-
 
                 // denførsterække = table.Rows[0] ["navn"].ToString();            
             }
