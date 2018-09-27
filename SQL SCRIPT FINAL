@@ -1,0 +1,45 @@
+use master
+IF EXISTS(select * from sys.databases where name='Autoværksted')
+DROP DATABASE Autoværksted
+CREATE DATABASE Autoværksted
+go
+use Autoværksted
+go
+create table kunder (
+id int identity (1,1) primary key,
+fornavn nvarchar(35),
+efternavn nvarchar(35),
+postnr int,
+)
+
+
+go
+create table bil(
+id int foreign key references kunder(id),
+regnr int identity (1,1) primary key,
+mærke nvarchar(35),
+model nvarchar(35),
+årgang int,
+km int,
+brændstoftype nvarchar(35),
+vægt int,
+
+)
+go
+create table værkstedsbesøg(
+id int identity (1,1) primary key, 
+regnr int foreign key references bil(regnr),
+registreringsDato nvarchar(25),
+
+)
+go
+create table værkstedsophold(
+id int identity (1,1) primary key,
+regnr int foreign key references bil(regnr),
+DatoforCheckIn varchar(50),
+DatoforCheckUd varchar(50)
+)
+select * from kunder
+select * from bil
+select * from værkstedsbesøg
+select * from værkstedsophold
