@@ -28,11 +28,25 @@ namespace SQL_C_Værksted_Superclass_Test
                     Console.Write(kunde["efternavn"].ToString());
                     Console.Write(" ");
                     Console.Write(kunde["postnr"].ToString());
+                    Console.WriteLine();
 
                 }
-
                 // denførsterække = table.Rows[0] ["navn"].ToString();            
             }
         }
+
+        //public static void sort()
+        //{
+        //    char s = Convert.ToChar(Console.Read());
+        //    switch (s)
+        //    {
+        //        case 'f':
+        //            Kunde.Select("select * from kunder order by fornavn");
+        //            break;
+        //        case 'l':
+        //            Kunde.Select("select * from kunder order by efternavn");
+        //            break;
+        //    }
+        //}
     }
 }

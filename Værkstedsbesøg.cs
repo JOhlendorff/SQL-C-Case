@@ -26,6 +26,7 @@ namespace SQL_C_Værksted_Superclass_Test
                     Console.Write(værkstedsophold["id"].ToString());
                     Console.Write(" ");
                     Console.Write(værkstedsophold["registreringsDato"].ToString());
+                    Console.WriteLine();
                 }
 
                 // denførsterække = table.Rows[0] ["navn"].ToString();            

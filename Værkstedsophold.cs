@@ -28,6 +28,7 @@ namespace SQL_C_Værksted_Superclass_Test
                     Console.Write(værkstedsophold["DatoforCheckIn"].ToString());
                     Console.Write(" ");
                     Console.Write(værkstedsophold["DatoforCheckUd"].ToString());
+                    Console.WriteLine();
 
                 }
 

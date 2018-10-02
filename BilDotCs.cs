@@ -34,6 +34,7 @@ namespace SQL_C_Værksted_Superclass_Test
                     Console.Write(bil["brændstoftype"].ToString());
                     Console.Write(" ");
                     Console.Write(bil["vægt"].ToString());
+                    Console.WriteLine();
 
                 }
 
